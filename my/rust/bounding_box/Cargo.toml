@@ -1,0 +1,39 @@
+[package]
+name = "rust-clustering"
+version = "0.1.0"
+edition = "2018"
+
+[lib]
+name = "bounding_box"
+path = "src/bounding_box.rs"
+crate-type = ["cdylib", "lib"]
+
+[dependencies]
+itertools = "0.9.0"
+ndarray = "0.14.0"
+ndarray-stats = "0.4.0"
+numpy = "0.13.1"
+num = "*"
+noisy_float = "0.1.15"
+float-ord = "*"
+ndarray-rand = "0.13.0"
+
+[dependencies.pyo3]
+version = "0.13.2"
+
+[features]
+extension-module = ["pyo3/extension-module"]
+default = ["extension-module"]
+
+[dev-dependencies]
+rand_distr = "*"
+quickcheck = "*"
+quickcheck_macros = "*"
+approx = "*"
+rand = "*"
+geo = "*"
+criterion = "*"
+
+[[bench]]
+name = "benchmarks"
+harness = false

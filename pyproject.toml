@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "my-rust"
+version = "0.1.0"
+description = ""
+authors = ["Miguel Torres Costa <miguelptcosta1995@gmail.com>"]
+packages = [{include = "my"}]
+readme = "README.md"
+
+[tool.poetry.build]
+script = "build_rust.py"
+generate-setup-file = true
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[build-system]
+requires = ["poetry-core", "setuptools_rust"]
+build-backend = "poetry.core.masonry.api"
